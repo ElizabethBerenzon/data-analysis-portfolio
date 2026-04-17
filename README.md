@@ -93,7 +93,7 @@ cohort_summary AS (
 SELECT *
 FROM cohort_summary;
 
-<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/ed918140-74b6-47bb-803f-3cfad1c251c1" />
+
 ```
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/b612578c-9c1c-4f3e-9fde-17f6937612d1" />
 
