@@ -8,16 +8,14 @@ Customer Retention & Acquisition Analysis
 Project Overview
 This analysis provides a comprehensive understanding of customer behavior,focusing on Cohort Retention and Acquisition Channel Effectiveness.
 The aim was to identify trends in customer loyalty all over time and determine which marketing channel deliver the highest long term revenue.
--
-Key Insights:
-* Cohort Analysis: Visualized user retention,identifing critical drop-off points in the cutomer lifecycle
-* Channel Effiency: Evaluated acquisition sources to determine which  channels drive the highest revenue retention rates.
-* Recommendations: Reffering to data , it is suggested to spend toward channels that demonstrate superior long-term customer value
+--
 
 Technical Stack
 * Database: SQL( for data extraction,transformation and optimization)
 * Visualizaton: Tableau (for dashboard design,cohort heatmaps)
 * Data Methodolgy: Ravenue formula (Current MRR / Initial Month 0 MRR) * 100
+  --
+
 ```
 Step 1: Define the Cohort for each account on their signup date 
 WITH account_cohorts As (
@@ -30,17 +28,11 @@ as cohort_month
    )
  Select * from account_cohorts ;
 ```
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 25 52" src="https://github.com/user-attachments/assets/9b1a67f9-1e89-4ec4-86c5-150c41070241" />
 
 
--- Step 2: Calculate the lifecycle month for each subscription payment
-WITH account_cohorts AS (
-    SELECT 
-        account_id,
-        referral_source,
-        DATE_FORMAT(signup_date, '%Y-%m-01') AS cohort_month
-    FROM ravenstack_accounts r
-),
 
+Step 2: Calculate the lifecycle month for each subscription payment
 monthly_revenue_lifecycle AS (
     SELECT 
         ac.cohort_month,
@@ -60,31 +52,11 @@ monthly_revenue_lifecycle AS (
 SELECT * 
 FROM monthly_revenue_lifecycle;
 
--- Step 3: Aggregate revenue metrics by cohort and month 
- 
-WITH account_cohorts AS (
-    SELECT 
-        account_id,
-        referral_source,
-        DATE_FORMAT(signup_date, '%Y-%m-01') AS cohort_month
-    FROM ravenstack_accounts
-),
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 03 38" src="https://github.com/user-attachments/assets/5929ca12-10e5-4247-873d-f752b233ef22" />
 
-monthly_revenue_lifecycle AS (
-    SELECT 
-        ac.cohort_month,
-        ac.referral_source,
-        PERIOD_DIFF(
-            DATE_FORMAT(s.start_date, '%Y%m'),
-            DATE_FORMAT(ac.cohort_month, '%Y%m')
-        ) AS month_number,
-        s.mrr_amount,
-        ac.account_id
-    FROM account_cohorts ac
-    JOIN ravenstack_subscriptions s
-        ON ac.account_id = s.account_id
-    WHERE s.mrr_amount > 0
-),
+
+
+Step 3: Aggregate revenue metrics by cohort and month
 
 cohort_summary AS (
     SELECT
@@ -101,43 +73,9 @@ cohort_summary AS (
 SELECT *
 FROM cohort_summary;
 
--- Step 4: Final output with Revenue Retention percantage
-WITH account_cohorts AS (
-    SELECT 
-        account_id,
-        referral_source,
-        DATE_FORMAT(signup_date, '%Y-%m-01') AS cohort_month
-    FROM ravenstack_accounts
-),
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/ed918140-74b6-47bb-803f-3cfad1c251c1" />
 
-monthly_revenue_lifecycle AS (
-    SELECT 
-        ac.cohort_month,
-        ac.referral_source,
-        PERIOD_DIFF(
-            DATE_FORMAT(s.start_date, '%Y%m'),
-            DATE_FORMAT(ac.cohort_month, '%Y%m')
-        ) AS month_number,
-        s.mrr_amount,
-        ac.account_id
-    FROM account_cohorts ac
-    JOIN ravenstack_subscriptions s
-        ON ac.account_id = s.account_id
-    WHERE s.mrr_amount > 0
-),
-
-cohort_summary AS (
-    SELECT
-        cohort_month,
-        month_number,
-        referral_source,
-        SUM(mrr_amount) AS total_mrr,
-        COUNT(DISTINCT account_id) AS active_customers
-    FROM monthly_revenue_lifecycle
-    WHERE month_number >= 0
-    GROUP BY cohort_month, month_number, referral_source
-)
-
+Step 4: Final output with Revenue Retention percantage
 SELECT 
     cs.cohort_month,
     cs.month_number,
@@ -157,8 +95,4 @@ SELECT
 FROM cohort_summary cs
 ORDER BY cs.cohort_month DESC, cs.month_number ASC;
 
-
--- I used with for breaking down complex logic into readble ,step-by-step blocks
--- I used FIRST_VALUE as a window function to establish a baseline for each cohort.
--- It allowed me to get the revenue of the signup month (Month 0) and use it as a divisor for calculating the retention rate
--- across the entire customer lifecycle without performing expensive self-joins."
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 13 18 27" src="https://github.com/user-attachments/assets/86a95ebb-8244-40ec-976a-a0619e723304" />
