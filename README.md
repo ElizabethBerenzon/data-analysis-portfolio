@@ -16,8 +16,9 @@ Technical Stack
 * Data Methodolgy: Ravenue formula (Current MRR / Initial Month 0 MRR) * 100
   --
 
-```
+
 Step 1: Define the Cohort for each account on their signup date 
+```
 WITH account_cohorts As (
   Select 
     account_id,
@@ -28,12 +29,10 @@ as cohort_month
    )
  Select * from account_cohorts ;
 ```
-<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 03 38" src="https://github.com/user-attachments/assets/2b8f6efc-18c1-4ffb-a3fb-37af1ab13f9f" />
-
-
 
 
 Step 2: Calculate the lifecycle month for each subscription payment
+```
 monthly_revenue_lifecycle AS (
     SELECT 
         ac.cohort_month,
@@ -52,13 +51,13 @@ monthly_revenue_lifecycle AS (
 
 SELECT * 
 FROM monthly_revenue_lifecycle;
-
+```
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 03 38" src="https://github.com/user-attachments/assets/5929ca12-10e5-4247-873d-f752b233ef22" />
 
 
 
 Step 3: Aggregate revenue metrics by cohort and month
-
+```
 cohort_summary AS (
     SELECT
         cohort_month,
@@ -77,6 +76,7 @@ FROM cohort_summary;
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/ed918140-74b6-47bb-803f-3cfad1c251c1" />
 
 Step 4: Final output with Revenue Retention percantage
+```
 SELECT 
     cs.cohort_month,
     cs.month_number,
@@ -85,7 +85,7 @@ SELECT
     cs.active_customers,
 
     ROUND(
-        100.0 * cs.total_mrr /             -- here I use revenue rate formula;it's crucial here not to forget about aggregation
+        100.0 * cs.total_mrr /             
         FIRST_VALUE(cs.total_mrr) OVER (
             PARTITION BY cs.cohort_month, cs.referral_source   
             ORDER BY cs.month_number
@@ -95,5 +95,6 @@ SELECT
 
 FROM cohort_summary cs
 ORDER BY cs.cohort_month DESC, cs.month_number ASC;
+```
 
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 13 18 27" src="https://github.com/user-attachments/assets/86a95ebb-8244-40ec-976a-a0619e723304" />
