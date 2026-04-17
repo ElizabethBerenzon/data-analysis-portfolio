@@ -5,16 +5,23 @@
 Data analysis project : SQL for data extraction and cleaning, combined with Tableu for interactive dashboarding. Focusing on perfomance metrics analysis and data-driven insights
 
 Customer Retention & Acquisition Analysis
-Project Overview
+--
+Project Overview 
+--
 This analysis provides a comprehensive understanding of customer behavior,focusing on Cohort Retention and Acquisition Channel Effectiveness.
 The aim was to identify trends in customer loyalty all over time and determine which marketing channel deliver the highest long term revenue.
+
+Key Questions to Answer
 --
+1.	Retention Dynamics: How does Monthly Recurring Revenue (MRR) evolve for different user cohorts over time? At what point do we see the most significant churn?
+2.	Acquisition Strategy: Which marketing channels (Ads, Organic, Referral, etc.) bring in the most loyal customers versus those who churn quickly?
+3.	Data-Driven Decisions: Provide a visual instrument to help the marketing team reallocate budgets toward high-retention channels.
 
 Technical Stack
+--
 * Database: SQL( for data extraction,transformation and optimization)
 * Visualizaton: Tableau (for dashboard design,cohort heatmaps)
 * Data Methodolgy: Ravenue formula (Current MRR / Initial Month 0 MRR) * 100
-  --
   
 ### Data Sources
 **1. Accounts Table (`ravenstack_accounts`)**
