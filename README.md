@@ -125,5 +125,17 @@ ORDER BY cs.cohort_month DESC, cs.month_number ASC;
 Data Visualisation (Tableau) • 
 Dashboard Overview
 --
-Cohort Retention Heatmap: A detailed matrix tracking revenue retention percentages from January to December. It allows for immediate identification of the period where the most significant churn occurs
-Acquisition Channel Effectiveness: A dynamic bar chart comparing the average retention rates across different referral sources (Ads, Organic, Partner, etc.).
+* Cohort Retention Heatmap: A detailed matrix tracking revenue retention percentages from January to December. It allows for immediate identification of the period where the most significant churn occurs
+* Acquisition Channel Effectiveness: A dynamic bar chart comparing the average retention rates across different referral sources (Ads,  Organic, Partner, etc.).
+<img width="1418" height="813" alt="Снимок экрана 2026-04-17 в 18 36 48" src="https://github.com/user-attachments/assets/fc2e19a7-4227-4d04-83af-a3a169f62592" />
+
+Key Insights & Business Recommendations
+1. Retention "Cliff" Identification (Критическая точка оттока)
+• Insight: Based on the Cohort Heatmap, we observed a significant drop in revenue retention between Month 3 and Month 4 across almost all cohorts.
+• Recommendation: The Product and Customer Success teams should investigate user engagement during the first 90 days. Implementing a "re-boarding" campaign in Month 3 could help mitigate this early churn.
+2. High-Performance Cohorts (Успешные периоды)
+• Insight: The cohorts from late 2023 (Q3-Q4) show a 15% higher retention rate compared to early 2023 cohorts. This suggests that product updates or changes in the onboarding process implemented during that period were highly effective.
+• Recommendation: Analyze the specific product features or marketing messages used during Q3-Q4 2023 to replicate that success for future users.
+3. Acquisition Channel Quality (Качество каналов)
+• Insight: While the ads channel brings in the highest volume of new accounts, the organic and partner channels demonstrate superior long-term retention. Users from ads tend to churn 20% faster than those from organic search.
+• Recommendation: To maximize Lifetime Value (LTV), the marketing budget should be gradually reallocated from underperforming paid ads to strengthening the partner network and SEO (organic) strategies.
