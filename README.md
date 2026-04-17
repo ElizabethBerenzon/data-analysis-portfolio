@@ -121,3 +121,9 @@ ORDER BY cs.cohort_month DESC, cs.month_number ASC;
 ```
 
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 13 18 27" src="https://github.com/user-attachments/assets/86a95ebb-8244-40ec-976a-a0619e723304" />
+
+Data Visualisation (Tableau) • 
+Dashboard Overview
+--
+Cohort Retention Heatmap: A detailed matrix tracking revenue retention percentages from January to December. It allows for immediate identification of the period where the most significant churn occurs
+Acquisition Channel Effectiveness: A dynamic bar chart comparing the average retention rates across different referral sources (Ads, Organic, Partner, etc.).
