@@ -15,6 +15,20 @@ Technical Stack
 * Visualizaton: Tableau (for dashboard design,cohort heatmaps)
 * Data Methodolgy: Ravenue formula (Current MRR / Initial Month 0 MRR) * 100
   --
+  
+### Data Sources
+**1. Accounts Table (`ravenstack_accounts`)**
+Focuses on customer acquisition and firmographic data:
+- `account_id`: Unique identifier for each account.
+- `referral_source`: The marketing channel used to acquire the customer (Ads, Organic, Partner, etc.).
+- `signup_date`: The initial registration date.
+
+**2. Subscriptions Table (`ravenstack_subscriptions`)**
+Contains transactional data required for revenue calculations:
+- `account_id`: Links the subscription to the account.
+- `start_date`: The beginning of the subscription period.
+- `mrr_amount`: The Monthly Recurring Revenue (MRR) used as the primary metric for the retention analysis.
+- `plan_tier`: The service level (Basic, Pro, Enterprise).
 
 
 Step 1: Define the Cohort for each account on their signup date 
