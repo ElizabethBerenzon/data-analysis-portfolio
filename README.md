@@ -28,7 +28,8 @@ as cohort_month
    )
  Select * from account_cohorts ;
 ```
-<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 25 52" src="https://github.com/user-attachments/assets/9b1a67f9-1e89-4ec4-86c5-150c41070241" />
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 03 38" src="https://github.com/user-attachments/assets/2b8f6efc-18c1-4ffb-a3fb-37af1ab13f9f" />
+
 
 
 
