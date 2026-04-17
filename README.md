@@ -21,7 +21,7 @@ Technical Stack
 --
 * Database: SQL( for data extraction,transformation and optimization)
 * Visualizaton: Tableau (for dashboard design,cohort heatmaps)
-* Data Methodolgy: Ravenue formula (Current MRR / Initial Month 0 MRR) * 100
+* Data Methodolgy: Retention formula (Current MRR / Initial Month 0 MRR) * 100
   
 ### Data Sources
 **1. Accounts Table (`ravenstack_accounts`)**
