@@ -130,12 +130,19 @@ Dashboard Overview
 <img width="1418" height="813" alt="Снимок экрана 2026-04-17 в 18 36 48" src="https://github.com/user-attachments/assets/fc2e19a7-4227-4d04-83af-a3a169f62592" />
 
 Key Insights & Business Recommendations
-1. Retention "Cliff" Identification
+--
+Retention "Cliff" Identification:
 • Insight: Based on the Cohort Heatmap, we observed a significant drop in revenue retention between Month 3 and Month 4 across almost all cohorts.
-• Recommendation: The Product and Customer Success teams should investigate user engagement during the first 90 days. 
-2. High-Performance Cohorts 
+
+• Recommendation: The Product and Customer Success teams should investigate user engagement during the first 90 days.
+
+High-Performance Cohorts :
 • Insight: The cohorts from late 2023 (Q3-Q4) show a higher retention rate compared to early 2023 cohorts. This suggests that product updates or changes in the onboarding process implemented during that period were highly effective.
+
 • Recommendation: Analyze the specific product features or marketing messages used during Q3-Q4 2023 to replicate that success for future users.
-3. Acquisition Channel Quality 
+
+ Acquisition Channel Quality :
+
 • Insight: While the ads channel brings in the highest volume of new accounts, the organic and partner channels demonstrate superior long-term retention. 
+
 • Recommendation: To maximize Lifetime Value (LTV), the marketing budget should be gradually reallocated from underperforming paid ads to strengthening the partner network and SEO (organic) strategies.
