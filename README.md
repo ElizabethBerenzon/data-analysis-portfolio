@@ -17,13 +17,27 @@ Key Questions to Answer
 2.	Acquisition Strategy: Which marketing channels (Ads, Organic, Referral, etc.) bring in the most loyal customers versus those who churn quickly?
 3.	Data-Driven Decisions: Provide a visual instrument to help the marketing team reallocate budgets toward high-retention channels.
 
+Project Structure
+```text
+ravenstack-analytics/
+├── data/                      # Raw datasets (CSV files)
+│   ├── ravenstack_accounts.csv
+│   └── ravenstack_subscriptions.csv
+├── sql/                       # Data transformation queries
+│   └── retention_logic.sql
+├── visuals/                   # Dashboard screenshots & assets
+│   ├── cohort_heatmap.png
+│   └── channel_analysis.png
+└── README.md                  # Project documentation
+
+```
 Technical Stack
 --
 * Database: SQL( for data extraction,transformation and optimization)
 * Visualizaton: Tableau (for dashboard design,cohort heatmaps)
 * Data Methodolgy: Retention formula (Current MRR / Initial Month 0 MRR) * 100
-  
-### Data Sources
+
+Data Sources
 **1. Accounts Table (`ravenstack_accounts`)**
 Focuses on customer acquisition and firmographic data:
 - `account_id`: Unique identifier for each account.
@@ -36,8 +50,7 @@ Contains transactional data required for revenue calculations:
 - `start_date`: The beginning of the subscription period.
 - `mrr_amount`: The Monthly Recurring Revenue (MRR) used as the primary metric for the retention analysis.
 - `plan_tier`: The service level (Basic, Pro, Enterprise).
-
-
+```
 Step 1: Define the Cohort for each account on their signup date 
 ```
 WITH account_cohorts As (
