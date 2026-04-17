@@ -44,7 +44,7 @@ WITH account_cohorts As (
   Select 
     account_id,
     referral_source,
-    DATE_FORMAT(signup_date , '%Y-%m-01')  -- Normalize signup_date to the first month of the year
+    DATE_FORMAT(signup_date , '%Y-%m-01')  
 as cohort_month
    From ravenstack_accounts r 
    )
