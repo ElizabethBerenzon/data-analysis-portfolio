@@ -50,7 +50,8 @@ Contains transactional data required for revenue calculations:
 - `start_date`: The beginning of the subscription period.
 - `mrr_amount`: The Monthly Recurring Revenue (MRR) used as the primary metric for the retention analysis.
 - `plan_tier`: The service level (Basic, Pro, Enterprise).
-```
+``
+
 Step 1: Define the Cohort for each account on their signup date 
 ```
 WITH account_cohorts As (
@@ -63,6 +64,7 @@ as cohort_month
    )
  Select * from account_cohorts ;
 ```
+
 <img width="545" height="293" alt="Снимок экрана 2026-04-17 в 19 37 11" src="https://github.com/user-attachments/assets/95994d77-7aff-4282-b206-3a40178c0c1b" />
 
 
