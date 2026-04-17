@@ -29,6 +29,7 @@ as cohort_month
    )
  Select * from account_cohorts ;
 ```
+<img width="545" height="293" alt="Снимок экрана 2026-04-17 в 19 37 11" src="https://github.com/user-attachments/assets/95994d77-7aff-4282-b206-3a40178c0c1b" />
 
 
 Step 2: Calculate the lifecycle month for each subscription payment
@@ -52,9 +53,7 @@ monthly_revenue_lifecycle AS (
 SELECT * 
 FROM monthly_revenue_lifecycle;
 ```
-<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 00 03 38" src="https://github.com/user-attachments/assets/5929ca12-10e5-4247-873d-f752b233ef22" />
-
-
+<img width="807" height="293" alt="Снимок экрана 2026-04-17 в 19 38 21" src="https://github.com/user-attachments/assets/3637912d-87b7-4749-8f52-0f63e1451632" />
 
 Step 3: Aggregate revenue metrics by cohort and month
 ```
@@ -74,9 +73,12 @@ SELECT *
 FROM cohort_summary;
 
 <img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/ed918140-74b6-47bb-803f-3cfad1c251c1" />
+```
+<img width="822" height="375" alt="Снимок экрана 2026-04-17 в 18 26 09" src="https://github.com/user-attachments/assets/b612578c-9c1c-4f3e-9fde-17f6937612d1" />
 
 Step 4: Final output with Revenue Retention percantage
 ```
+
 SELECT 
     cs.cohort_month,
     cs.month_number,
