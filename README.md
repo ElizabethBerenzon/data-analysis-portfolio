@@ -2,8 +2,6 @@
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 
-Data analysis project : SQL for data extraction and cleaning, combined with Tableu for interactive dashboarding. Focusing on perfomance metrics analysis and data-driven insights
-
 Customer Retention & Acquisition Analysis
 --
 Project Overview 
@@ -16,6 +14,8 @@ Key Questions to Answer
 1.	Retention Dynamics: How does Monthly Recurring Revenue (MRR) evolve for different user cohorts over time? At what point do we see the most significant churn?
 2.	Acquisition Strategy: Which marketing channels (Ads, Organic, Referral, etc.) bring in the most loyal customers versus those who churn quickly?
 3.	Data-Driven Decisions: Provide a visual instrument to help the marketing team reallocate budgets toward high-retention channels.
+
+Data analysis project : SQL for data extraction and cleaning, combined with Tableu for interactive dashboarding. Focusing on perfomance metrics analysis and data-driven insights
 
 Project Structure
 ```text
